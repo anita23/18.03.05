@@ -1,0 +1,10 @@
+####18 de marzo!!####
+tdesoc<- sample(3:8, 60, replace=T)
+tedesocs <- ts(tdesoc, start = 2010, frequency = 12)
+tedesocs.de <- decompose(tedesocs)
+names(tedesocs)
+plot(tedesocs)
+plot(decompose(tedesocs))
+trend<- tedesocs.de$trend
+season<- tedesocs.de$seasonal
+tedesocs.dom <- decompose(tedesocs, type = "mult")
